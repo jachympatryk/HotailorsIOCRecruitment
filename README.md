@@ -12,8 +12,8 @@ Extend the Azure Function (HttpTrigger) so that it can receive a list of Pokémo
 
 * Remember SOLID principles.
 * To fetch Pokémon data, use: https://pokeapi.co.
-* The Azure Function should be triggered via GET (HTTP triggered function).
-* Please use lodash, axios, and inversify.
+* The Azure Function should be triggered via GET request (HTTP triggered function).
+* Please use lodash, axios and inversify.
 * Use the existing structure and extend it.
 * Code should be linted.
 * Example invocation: `http://localhost:7071/api/HttpTrigger?id=1&id=2&id=5&type=grass`
