@@ -19,7 +19,7 @@ Extend the Azure Function (HttpTrigger) so that it can receive a list of Pokémo
 * Example invocation: `http://localhost:7071/api/HttpTrigger?id=1&id=2&id=5&type=grass`
 * Example response: 
 ```json 
-{ status: 200, body: { pokemons: ["bulbasaur", "ivysaur"] } }
+{ "status": 200, "body": { "pokemons": ["bulbasaur", "ivysaur"] } }
 ```
 
 If something isn't clearly specified in the instructions, decide on your own and be prepared to explain your decision. We strongly rely on your invention and creativity.
