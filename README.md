@@ -4,7 +4,7 @@
 
 To start Azure function locally you will need:
 1. Node.js & npm [(installation instructions)](https://nodejs.org/en/download)
-2. Azure Functions Core Tools [(installation instructions)](https://github.com/nodejs/node#download)
+2. Azure Functions Core Tools [(installation instructions)](https://github.com/Azure/azure-functions-core-tools#installing)
 
 ## Task
 
