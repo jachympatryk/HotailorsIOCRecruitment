@@ -1,0 +1,35 @@
+{
+  "name": "fancy-pokemon-api",
+  "description": "WORKTRIPS (HOTAILORS) IOC RECRUITMENT TASK",
+  "version": "0.1-alpha",
+  "private": "true",
+  "scripts": {
+    "prestart": "npm run build && func extensions install",
+    "start": "func start",
+    "prebuild": "npm run lint",
+    "build": "tsc",
+    "watch": "tsc --w",
+    "lint": "eslint -c ./.eslintrc.js --cache \"**/*.ts\"",
+    "lint:fix": "eslint \"**/*.ts\" --fix",
+    "lint:build-rules": "tsc ./tslint/rules/underscorePrivatesRule.ts --lib \"es6\" && tsc ./tslint/rules/uppercaseStaticReadonlyRule.ts --lib \"es6\"",
+    "test": "echo \"No tests yet... :)\""
+  },
+  "dependencies": {
+    "@azure/functions": "^1.0.3",
+    "azure-storage": "^2.10.2",
+    "inversify": "^5.0.1",
+    "reflect-metadata": "^0.1.13"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^7.16.0",
+    "@typescript-eslint/eslint-plugin-tslint": "^7.0.2",
+    "@typescript-eslint/parser": "^7.16.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsdoc": "^48.7.0",
+    "eslint-plugin-prefer-arrow": "^1.2.3",
+    "tslint": "^5.16.0",
+    "typescript": "^3.4.5"
+  }
+}
