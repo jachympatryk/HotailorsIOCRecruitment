@@ -3,8 +3,9 @@
   "description": "WORKTRIPS (HOTAILORS) IOC RECRUITMENT TASK",
   "version": "0.1-alpha",
   "private": "true",
+  "main": "dist/HttpTrigger/index.js",
   "scripts": {
-    "prestart": "npm run build && func extensions install",
+    "prestart": "npm run build",
     "start": "func start",
     "prebuild": "npm run lint",
     "build": "tsc",
@@ -12,24 +13,35 @@
     "lint": "eslint -c ./.eslintrc.js --cache \"**/*.ts\"",
     "lint:fix": "eslint \"**/*.ts\" --fix",
     "lint:build-rules": "tsc ./tslint/rules/underscorePrivatesRule.ts --lib \"es6\" && tsc ./tslint/rules/uppercaseStaticReadonlyRule.ts --lib \"es6\"",
-    "test": "echo \"No tests yet... :)\""
+    "test": "echo \"No tests yet... :)\"",
+    "prettier": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,scss,md}\""
   },
   "dependencies": {
-    "@azure/functions": "^1.0.3",
-    "azure-storage": "^2.10.2",
-    "inversify": "^5.0.1",
-    "reflect-metadata": "^0.1.13"
+    "@azure/functions": "4.5.0",
+    "axios": "^1.7.2",
+    "inversify": "6.0.2",
+    "lodash": "^4.17.21",
+    "qs": "^6.12.3",
+    "reflect-metadata": "^0.2.2",
+    "yup": "^1.4.0"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^7.16.0",
-    "@typescript-eslint/eslint-plugin-tslint": "^7.0.2",
-    "@typescript-eslint/parser": "^7.16.0",
-    "eslint": "^8.57.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-jsdoc": "^48.7.0",
-    "eslint-plugin-prefer-arrow": "^1.2.3",
-    "tslint": "^5.16.0",
-    "typescript": "^3.4.5"
+    "@ianvs/prettier-plugin-sort-imports": "4.3.0",
+    "@types/lodash": "^4.17.6",
+    "@types/node": "20.14.10",
+    "@types/qs": "^6.9.15",
+    "@typescript-eslint/eslint-plugin": "7.16.0",
+    "@typescript-eslint/eslint-plugin-tslint": "7.0.2",
+    "@typescript-eslint/parser": "7.16.0",
+    "eslint": "8.57.0",
+    "eslint-config-prettier": "9.1.0",
+    "eslint-plugin-import": "2.29.1",
+    "eslint-plugin-jsdoc": "48.7.0",
+    "eslint-plugin-prefer-arrow": "1.2.3",
+    "prettier": "3.3.2",
+    "typescript": "5.5.3"
+  },
+  "engines": {
+    "node": ">=20.0.0"
   }
 }

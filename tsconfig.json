@@ -4,15 +4,18 @@
     "target": "es6",
     "outDir": "dist",
     "sourceMap": true,
-    "strict": false,
+    "lib": ["ESNext"],
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "resolveJsonModule": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "noUncheckedIndexedAccess": true,
+    "strictPropertyInitialization": false,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true
   },
-  "exclude": [
-    "lint",
-    "dist",
-    ".eslintrc.js",
-  ]
+  "exclude": ["lint", "dist", ".eslintrc.js"]
 }
