@@ -8,6 +8,7 @@ import { Container } from 'inversify';
 import * as yup from 'yup';
 import getContainer, { useLogger } from '../ioc/inversify.config';
 import { createHandlerResponse, validateParams } from '../utils';
+import { HTTP_STATUS } from '../constants/constants';
 
 type FetchDataFunction<TParams, TResponse> = (
   params: TParams,
@@ -40,20 +41,24 @@ export const createRequestHandler = <TParams, TResponse>(
 
       const data: TResponse = await fetchData(parsedParams, container);
 
-      return createHandlerResponse(200, data);
+      return createHandlerResponse(HTTP_STATUS.OK, data);
     } catch (error) {
       if (error instanceof yup.ValidationError) {
         logger.error(`Validation error: ${error.errors.join(', ')}`);
-        return createHandlerResponse(400, {
+        return createHandlerResponse(HTTP_STATUS.BAD_REQUEST, {
           error: `Validation failed: ${error.errors.join(', ')}`,
         });
       }
       if (error instanceof Error) {
         logger.error(`Error processing request: ${error.message}`);
-        return createHandlerResponse(400, { error: error.message });
+        return createHandlerResponse(HTTP_STATUS.BAD_REQUEST, {
+          error: error.message,
+        });
       }
       logger.error('Unknown error processing request');
-      return createHandlerResponse(500, { error: 'Internal Server Error' });
+      return createHandlerResponse(HTTP_STATUS.INTERNAL_SERVER_ERROR, {
+        error: 'Internal Server Error',
+      });
     }
   };
 };
